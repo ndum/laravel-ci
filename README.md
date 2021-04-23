@@ -23,4 +23,4 @@ Laravel Dusk is tested and supported with this container.
 [ndum/laravel-ci](https://hub.docker.com/repository/docker/ndum/laravel-ci) is available on dockerhub as automated trusted build.
 
 ## License:
-laravelci is a MIT-licensed open source project.
+laravel-ci is a MIT-licensed open source project.
