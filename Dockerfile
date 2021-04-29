@@ -22,6 +22,7 @@ RUN apk --no-cache add \
     php8-pecl-imagick \
     php8-pecl-redis \
     php8-phar \
+    php8-tokenizer \
     php8-pgsql \
     php8-session \
     php8-simplexml \
@@ -29,6 +30,7 @@ RUN apk --no-cache add \
     php8-sqlite3 \
     php8-xml \
     php8-xmlreader \
+    php8-xmlwriter \
     php8-zip \
     php8-zlib \
     curl mysql-client git sqlite unzip wget tzdata xvfb
