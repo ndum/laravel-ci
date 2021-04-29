@@ -36,12 +36,7 @@ RUN apk --no-cache add \
     php8-xmlwriter \
     php8-zip \
     php8-zlib \
-    curl mysql-client git sqlite unzip wget tzdata xvfb
-
-# Install nodejs packages
-RUN apk --no-cache add --update \
-    nodejs \
-    npm
+    curl mysql-client git sqlite unzip wget tzdata xvfb nodejs npm
 
 # Install packages from edge for Laravel Dusk
 RUN apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing \
