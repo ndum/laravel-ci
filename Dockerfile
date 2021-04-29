@@ -56,7 +56,7 @@ COPY config/fpm-pool.conf /etc/php8/php-fpm.d/www.conf
 COPY config/php.ini /etc/php8/conf.d/custom.ini
 
 # phpunit
-RUN wget https://phar.phpunit.de/phpunit.phar
+RUN wget --progress=dot:giga https://phar.phpunit.de/phpunit.phar
 RUN chmod +x phpunit.phar
 RUN mv phpunit.phar /usr/local/bin/phpunit
 
