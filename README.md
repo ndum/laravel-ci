@@ -1,7 +1,5 @@
 # laravel-ci
 
-:warning: **This repository is under development!**
-
 ## Laravel optimized CI/CD-Container based on Alpine-Linux
 
 This container can be used for many different Continous Integration (CI/CD) enviroments.
