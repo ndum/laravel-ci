@@ -9,11 +9,11 @@ It's use Alpine Linux for the smallest size and best performance.
 
 -> Successor of the popular [php7-laravel](https://github.com/ndum/php7-laravel) project
 
-## Laravel Dusk:
+## Laravel Dusk
 
 Laravel Dusk is tested and supported with this container.
 
-## Built with:
+## Built with
 
 - NPM
 - PHP 8.0 with Composer
@@ -21,10 +21,10 @@ Laravel Dusk is tested and supported with this container.
 - PHPUnit
 - Google Chrome & Chromedriver
 
-## Docker Hub - Automated build:
+## Docker Hub - Automated build
 
 [ndum/laravel-ci](https://hub.docker.com/repository/docker/ndum/laravel-ci) is available on dockerhub as automated trusted build.
 
-## License:
+## License
 
 laravel-ci is a MIT-licensed open source project.
