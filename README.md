@@ -19,10 +19,6 @@ Laravel Dusk is tested and supported with this container.
 - PHPUnit
 - Google Chrome & Chromedriver
 
-## Docker Hub - Automated build
-
-[ndum/laravel-ci](https://hub.docker.com/repository/docker/ndum/laravel-ci) is available on dockerhub as automated trusted build.
-
 ## License
 
 laravel-ci is a MIT-licensed open source project.
