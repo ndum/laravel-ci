@@ -4,38 +4,38 @@ LABEL authors="Nicolas D. <nd@nidum.org> / Simon Baerlocher <s.baerlocher@sbaerl
 
 # Install packages
 RUN apk --no-cache add \
-    php8-ctype \
-    php8-curl \
-    php8-dom \
-    php8-exif \
-    php8-fileinfo \
-    php8-fpm \
-    php8-gd \
-    php8-iconv \
-    php8-intl \
-    php8-ldap \
-    php8-mbstring \
-    php8-mysqli \
-    php8-opcache \
-    php8-openssl \
-    php8-pdo \
-    php8-pdo_mysql \
-    php8-pdo_pgsql \
-    php8-pdo_sqlite \
-    php8-pecl-imagick \
-    php8-pecl-redis \
-    php8-phar \
-    php8-tokenizer \
-    php8-pgsql \
-    php8-session \
-    php8-simplexml \
-    php8-soap \
-    php8-sqlite3 \
-    php8-xml \
-    php8-xmlreader \
-    php8-xmlwriter \
-    php8-zip \
-    php8-zlib \
+    php81-ctype \
+    php81-curl \
+    php81-dom \
+    php81-exif \
+    php81-fileinfo \
+    php81-fpm \
+    php81-gd \
+    php81-iconv \
+    php81-intl \
+    php81-ldap \
+    php81-mbstring \
+    php81-mysqli \
+    php81-opcache \
+    php81-openssl \
+    php81-pdo \
+    php81-pdo_mysql \
+    php81-pdo_pgsql \
+    php81-pdo_sqlite \
+    php81-pecl-imagick \
+    php81-pecl-redis \
+    php81-phar \
+    php81-tokenizer \
+    php81-pgsql \
+    php81-session \
+    php81-simplexml \
+    php81-soap \
+    php81-sqlite3 \
+    php81-xml \
+    php81-xmlreader \
+    php81-xmlwriter \
+    php81-zip \
+    php81-zlib \
     curl mysql-client git sqlite unzip wget tzdata xvfb nodejs npm imagemagick
 
 # Install packages from edge for Laravel Dusk
@@ -43,7 +43,7 @@ RUN apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing \
     chromium \
     chromium-chromedriver \
     nss \
-    php8-pecl-xdebug
+    php81-pecl-xdebug
 
 # Symlink php
 # RUN ln -s /usr/bin/php8 /usr/bin/php
