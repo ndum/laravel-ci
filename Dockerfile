@@ -46,14 +46,14 @@ RUN apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing \
     php81-pecl-xdebug
 
 # Symlink php
-# RUN ln -s /usr/bin/php8 /usr/bin/php
+RUN ln -s /usr/bin/php81 /usr/bin/php
 
 # Install Composer
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
 # Configure PHP
-COPY config/fpm-pool.conf /etc/php8/php-fpm.d/www.conf
-COPY config/php.ini /etc/php8/conf.d/custom.ini
+COPY config/fpm-pool.conf /etc/php81/php-fpm.d/www.conf
+COPY config/php.ini /etc/php81/conf.d/custom.ini
 
 # phpunit
 RUN wget --progress=dot:giga https://phar.phpunit.de/phpunit.phar
