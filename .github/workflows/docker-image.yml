@@ -17,4 +17,4 @@ jobs:
     - name: Build the Docker image
       run: |
         DATE=$(date +%s)
-        docker build . --file Dockerfile --tag laravel-ci:$DATE
+        docker build . --file Dockerfile --tag laravel-ci:"${DATE}"
