@@ -34,7 +34,7 @@ jobs:
             type=raw,value=php${{ matrix.version }}-test
 
       - name: Build and push
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v5
         with:
           context: .
           build-args: PHP_VERSION=${{ matrix.version }}
