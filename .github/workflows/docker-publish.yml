@@ -1,4 +1,4 @@
-name: Docker
+name: Publish Container
 
 on:
   push:
@@ -6,18 +6,11 @@ on:
     branches:
       - master
 
-    # Publish `v1.2.3` tags as releases.
-    # tags:
-    #  - v*
-
-  # Run tests for any PRs.
-  pull_request:
-
 jobs:
-
-  # Push image to GitHub Packages.
-  # See also https://docs.docker.com/docker-hub/builds/
+  # Run tests.
+  # See also https://docs.docker.com/docker-hub/builds/automated-testing/
   push:
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         version:
