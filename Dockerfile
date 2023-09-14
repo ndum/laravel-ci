@@ -1,41 +1,43 @@
-FROM alpine:3.16
+FROM alpine:3.18
 
 LABEL authors="Nicolas D. <nd@nidum.org> / Simon Baerlocher <s.baerlocher@sbaerlocher.ch>"
 
+ARG PHP_VERSION=82
+
 # Install packages
 RUN apk --no-cache add \
-    php81-ctype \
-    php81-curl \
-    php81-dom \
-    php81-exif \
-    php81-fileinfo \
-    php81-fpm \
-    php81-gd \
-    php81-iconv \
-    php81-intl \
-    php81-ldap \
-    php81-mbstring \
-    php81-mysqli \
-    php81-opcache \
-    php81-openssl \
-    php81-pdo \
-    php81-pdo_mysql \
-    php81-pdo_pgsql \
-    php81-pdo_sqlite \
-    php81-pecl-imagick \
-    php81-pecl-redis \
-    php81-phar \
-    php81-tokenizer \
-    php81-pgsql \
-    php81-session \
-    php81-simplexml \
-    php81-soap \
-    php81-sqlite3 \
-    php81-xml \
-    php81-xmlreader \
-    php81-xmlwriter \
-    php81-zip \
-    php81-zlib \
+    php${PHP_VERSION}-ctype \
+    php${PHP_VERSION}-curl \
+    php${PHP_VERSION}-dom \
+    php${PHP_VERSION}-exif \
+    php${PHP_VERSION}-fileinfo \
+    php${PHP_VERSION}-fpm \
+    php${PHP_VERSION}-gd \
+    php${PHP_VERSION}-iconv \
+    php${PHP_VERSION}-intl \
+    php${PHP_VERSION}-ldap \
+    php${PHP_VERSION}-mbstring \
+    php${PHP_VERSION}-mysqli \
+    php${PHP_VERSION}-opcache \
+    php${PHP_VERSION}-openssl \
+    php${PHP_VERSION}-pdo \ 
+    php${PHP_VERSION}-pdo_mysql \
+    php${PHP_VERSION}-pdo_pgsql \
+    php${PHP_VERSION}-pdo_sqlite \
+    php${PHP_VERSION}-pecl-imagick \
+    php${PHP_VERSION}-pecl-redis \
+    php${PHP_VERSION}-phar \
+    php${PHP_VERSION}-tokenizer \
+    php${PHP_VERSION}-pgsql \
+    php${PHP_VERSION}-session \
+    php${PHP_VERSION}-simplexml \
+    php${PHP_VERSION}-soap \
+    php${PHP_VERSION}-sqlite3 \
+    php${PHP_VERSION}-xml \
+    php${PHP_VERSION}-xmlreader \
+    php${PHP_VERSION}-xmlwriter \
+    php${PHP_VERSION}-zip \
+    php${PHP_VERSION}-zlib \
     curl mysql-client git sqlite unzip wget tzdata xvfb nodejs npm imagemagick
 
 # Install packages from edge for Laravel Dusk
@@ -43,21 +45,20 @@ RUN apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing \
     chromium \
     chromium-chromedriver \
     nss \
-    php81-pecl-xdebug
+    php${PHP_VERSION}-pecl-xdebug
 
 # Symlink php
-RUN ln -s /usr/bin/php81 /usr/bin/php
+RUN ln -s /usr/bin/php${PHP_VERSION} /usr/bin/php
 
 # Install Composer
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
 # Configure PHP
-COPY config/fpm-pool.conf /etc/php81/php-fpm.d/www.conf
-COPY config/php.ini /etc/php81/conf.d/custom.ini
+COPY roots /
 
 # phpunit
-RUN wget --progress=dot:giga https://phar.phpunit.de/phpunit.phar
-RUN chmod +x phpunit.phar
-RUN mv phpunit.phar /usr/local/bin/phpunit
+RUN wget --progress=dot:giga https://phar.phpunit.de/phpunit.phar \
+    && chmod +x phpunit.phar \
+    && mv phpunit.phar /usr/local/bin/phpunit
 
 CMD ["php-fpm"]
