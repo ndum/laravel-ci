@@ -48,7 +48,8 @@ RUN apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing \
     php${PHP_VERSION}-pecl-xdebug
 
 # Symlink php
-RUN ln -s /usr/bin/php${PHP_VERSION} /usr/bin/php
+RUN [ ! -e /usr/bin/php ] && ln -s /usr/bin/php${PHP_VERSION} /usr/bin/php || true
+
 
 # Install Composer
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && php composer-setup.php --install-dir=/usr/local/bin --filename=composer
