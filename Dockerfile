@@ -1,4 +1,4 @@
-FROM alpine:3.19
+FROM alpine:3.23
 
 LABEL authors="Nicolas D. <nd@nidum.org> / Simon Baerlocher <s.baerlocher@sbaerlocher.ch>"
 
